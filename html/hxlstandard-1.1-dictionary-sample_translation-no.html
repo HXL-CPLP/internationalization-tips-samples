@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <h1>Sample from hxlstandard.org/standard/1-1final/dictionary/</h1>
+  <h3>1.1. Special notes</h3>
+  <p>
+    <b>Language attributes</b>—like <i translate="no">+i_en</i> for English,
+    <i translate="no">+i_fr</i> for French, and <i translate="no">+i_ar</i> for Arabic—are
+    not included in this document. For information on how to
+    construct them from ISO 639 language codes, see &#8220;<a
+      href="/standard/1_1beta/tagging/#structure.attributes.lang">Attributes
+      for languages</a>&#8221; in the HXL tagging conventions.
+  </p>
+  <p>
+    Some hashtags have <b>required datatypes</b>. These apply
+    currently to the <i translate="no"><a href="#tag_date">#date</a></i>
+    hashtag, which must always tag a column of dates; to the
+    humanitarian caseload hashtags <i translate="no"><a href="#tag_affected">#affected</a></i>, <i translate="no"><a
+        href="#tag_inneed">#inneed</a></i>, <i translate="no"><a href="#tag_targeted">#targeted</a></i>, <i translate="no"><a
+        href="#tag_reached">#reached</a></i>, which must always
+    tag a column of numbers; and to the financial-amount
+    hashtag <i translate="no"><a href="#tag_value">#value</a></i>, which must
+    also tag a column of numbers. The data type, if present,
+    appears as part of the hashtag definition.
+  </p>
+  <p>
+    Some hashtags have <b>default vocabularies</b>: those are
+    taxonomies of the values that are expected to appear in
+    the column below the hashtag when you add the <i translate="no">+code</i>
+    attribute: for example, the default vocabulary for
+    <i translate="no">#adm1 +code</i> is <i translate="no">+v_pcode</i> (UN place codes from
+    IASC <a href="https://data.humdata.org/search?ext_cod=1">Common
+      Operational Datasets</a>), but you can override any
+    defaults by supplying a different +v_ attribute. For more
+    information on vocabulary attributes, see &#8220;<a
+      href="/standard/1_1beta/tagging/#structure.attributes.vocab">Attributes
+      for controlled vocabularies</a>&#8221; in the HXL tagging
+    conventions document. Note that the <i translate="no">+v_</i> attributes
+    appear in the <a href="https://data.humdata.org/dataset/hxl-master-vocabulary-list">HXL
+      master vocabulary list</a> rather than here.
+  </p>
+  <p>
+    If you cannot find what you need here, you can <b>extend
+      HXL</b> with new hashtags like <i>#x_toxicity</i>. For
+    more information on extending HXL, see &#8220;<a href="/standard/1_0final/tagging/#extensions">Creating
+      extension tags</a>&#8221; in the HXL tagging conventions. (There
+    is no need to add &#8220;x_&#8221; when you create new attributes.)
+  </p>
+  <p>
+    If you&#8217;d like to add interactive help to your own
+    HXL-enabled web site or online tool, you can <b>link</b>
+    directly to the definition of any hashtag or attribute by
+    including this document&#8217;s URL, and adding an HTML fragment
+    identifier (anchor) replacing &#8220;#&#8221; with &#8220;tag_&#8221; for the
+    hashtag, or &#8220;+&#8221; with &#8220;att_&#8221; for the attribute. For
+    example, to link directly to the definition of the
+    &#8220;#modality&#8221; hashtag, use the fragment identifier &#8220;<a translate="no"
+      href="#tag_modality"><code>#tag_modality</code></a>&#8220;,
+    resulting in the full URL <a
+      href="/standard/1_1beta/dictionary/#tag_modality"><code translate="no">/standard/1_1beta/dictionary/#tag_modality</code></a>;
+    to link directly to the definition of the &#8220;+funder&#8221;
+    attribute, use the fragment identifier &#8220;<a  translate="no" href="#att_funder"><code>#att_funder</code></a>&#8220;,
+    resulting in the full URL <a
+      href="/standard/1_1beta/dictionary/#att_funder"><code>/standard/1_1beta/dictionary/#att_funder</code></a>.
+  </p>
+  <p>
+    See <b><a href="/standard/1_1beta/tagging/#credits">Credits</a></b>
+    in the HXL tagging conventions for information about HXL
+    Working Group member organisations and other contributors.
+  </p>
+  </section>
+  </section>
+  <section id="hashtags">
+    <h2>2. Core HXL hashtags</h2>
+    <p>
+      <i>(A cheatsheet of these hashtags is also available on a <a
+          href="/standard/1_1beta/postcards/">postcard</a>.)</i>
+    </p>
+    <p>
+      This section lists the <b>core HXL hashtags</b> grouped into
+      the following topic areas:
+    </p>
+    <ul>
+      <li><a href="#places">1.1. Places</a></li>
+      <li><a href="#people">1.2. Surveys and assessments</a></li>
+      <li><a href="#responses">1.3. Responses and other operations</a></li>
+      <li><a href="#None">1.4. Cash and finance</a></li>
+      <li><a href="#crises">1.5. Crises, incidents, and events</a></li>
+      <li><a href="#metadata">1.6. Metadata</a></li>
+    </ul>
+    <section class="category">
+      <h3 id="places">1.1. Places</h3>
+      <section id="tag_adm1" class="hashtag">
+        <h4>
+          #adm1
+          <small><a href="#tag_adm1">🔗</a></small>
+        </h4>
+        <p>
+          Top-level subnational administrative area (e.g. a governorate in Syria).
+          <i>Since HXL&nbsp;1.0.</i>
+        </p>
+        <p>
+          Defaults to <var translate="no">+v_pcode</var> with the <a href="#att_code"><var translate="no">+code</var></a> attribute if you
+          do not specify a vocabulary.
+        </p>
+        <p>
+          e.g.,
+          <code>#adm1 +code</code>
+          — <i>administrative level 1 P-code</i>
+        </p>
+        <section>
+          <h5>Suggested attributes for <var translate="no">#adm1</var></h5>
+          <dl class="compact">
+            <dt><var translate="no"><a href="#att_code">+code</a></var></dt>
+            <dd>Is a code or ID</dd>
+            <dt><var translate="no"><a href="#att_dest">+dest</a></var></dt>
+            <dd>Is a destination (place)</dd>
+            <dt><var translate="no"><a href="#att_name">+name</a></var></dt>
+            <dd>Is a name or title</dd>
+            <dt><var translate="no"><a href="#att_origin">+origin</a></var></dt>
+            <dd>Is a place of origin</dd>
+          </dl>
+        </section>
+      </section>
+      <section id="tag_adm2" class="hashtag">
+        <h4>
+
+          <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
